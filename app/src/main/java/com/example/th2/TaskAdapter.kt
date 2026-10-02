@@ -17,6 +17,7 @@ class TaskAdapter(
         val cbTask: CheckBox = itemView.findViewById(R.id.cbTask)
         val tvTaskTitle: TextView = itemView.findViewById(R.id.tvTaskTitle)
         val tvTaskDeadline: TextView = itemView.findViewById(R.id.tvTaskDeadline)
+        val tvTaskNote: TextView = itemView.findViewById(R.id.tvTaskNote)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TaskViewHolder {
@@ -30,6 +31,13 @@ class TaskAdapter(
 
         holder.tvTaskTitle.text = task.title
         holder.tvTaskDeadline.text = task.deadline
+
+        if (task.note.isNotEmpty()) {
+            holder.tvTaskNote.text = task.note
+            holder.tvTaskNote.visibility = View.VISIBLE
+        } else {
+            holder.tvTaskNote.visibility = View.GONE
+        }
 
         // Remove listener before setting checked to avoid triggering callback
         holder.cbTask.setOnCheckedChangeListener(null)

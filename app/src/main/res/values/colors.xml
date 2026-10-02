@@ -2,16 +2,38 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="primary">#1976D2</color>
-    <color name="primary_dark">#1565C0</color>
-    <color name="primary_light">#BBDEFB</color>
-    <color name="accent">#FF6F00</color>
-    <color name="background">#F5F5F5</color>
+
+    <!-- Primary palette - Modern Blue -->
+    <color name="primary">#4A6CF7</color>
+    <color name="primary_dark">#3B5DE7</color>
+    <color name="primary_light">#E8EDFE</color>
+    <color name="primary_variant">#6C8CFF</color>
+
+    <!-- Accent -->
+    <color name="accent">#FF6B6B</color>
+    <color name="accent_light">#FFE0E0</color>
+
+    <!-- Background -->
+    <color name="background">#F8F9FD</color>
     <color name="card_background">#FFFFFF</color>
-    <color name="text_primary">#212121</color>
-    <color name="text_secondary">#757575</color>
-    <color name="text_hint">#BDBDBD</color>
-    <color name="divider">#E0E0E0</color>
-    <color name="completed_text">#9E9E9E</color>
-    <color name="header_bg">#1976D2</color>
+    <color name="surface">#FFFFFF</color>
+
+    <!-- Text -->
+    <color name="text_primary">#1E293B</color>
+    <color name="text_secondary">#64748B</color>
+    <color name="text_hint">#94A3B8</color>
+    <color name="text_on_primary">#FFFFFF</color>
+
+    <!-- State -->
+    <color name="completed_text">#94A3B8</color>
+    <color name="divider">#E2E8F0</color>
+    <color name="success">#22C55E</color>
+    <color name="warning">#F59E0B</color>
+
+    <!-- Gradient -->
+    <color name="gradient_start">#4A6CF7</color>
+    <color name="gradient_end">#6C8CFF</color>
+
+    <!-- Header -->
+    <color name="header_bg">#4A6CF7</color>
 </resources>

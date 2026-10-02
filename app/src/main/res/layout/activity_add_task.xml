@@ -7,21 +7,24 @@
     android:background="@color/background"
     tools:context=".AddTaskActivity">
 
-    <!-- Toolbar -->
+    <!-- Gradient Toolbar -->
     <LinearLayout
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/header_bg"
+        android:background="@drawable/gradient_header_rounded"
         android:gravity="center_vertical"
         android:orientation="horizontal"
-        android:padding="16dp"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:paddingTop="48dp"
+        android:paddingBottom="24dp"
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageButton
             android:id="@+id/btnBack"
-            android:layout_width="36dp"
-            android:layout_height="36dp"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
             android:background="?attr/selectableItemBackgroundBorderless"
             android:contentDescription="Back"
             android:src="@android:drawable/ic_menu_revert"
@@ -33,75 +36,120 @@
             android:layout_marginStart="12dp"
             android:text="@string/add_task_title"
             android:textColor="@color/white"
-            android:textSize="20sp"
+            android:textSize="22sp"
             android:textStyle="bold" />
     </LinearLayout>
 
-    <LinearLayout
+    <!-- Form Card -->
+    <com.google.android.material.card.MaterialCardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="24dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="16dp"
+        app:cardBackgroundColor="@color/card_background"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="4dp"
         app:layout_constraintTop_toBottomOf="@id/toolbar">
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/tilTaskName"
-            style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="20dp"
-            android:hint="@string/task_name_hint">
+            android:orientation="vertical"
+            android:padding="24dp">
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/etTaskName"
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Chi tiết công việc"
+                android:textColor="@color/text_primary"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="20dp" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tilTaskName"
+                style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="text" />
-        </com.google.android.material.textfield.TextInputLayout>
+                android:layout_marginBottom="16dp"
+                android:hint="@string/task_name_hint"
+                app:boxCornerRadiusBottomEnd="12dp"
+                app:boxCornerRadiusBottomStart="12dp"
+                app:boxCornerRadiusTopEnd="12dp"
+                app:boxCornerRadiusTopStart="12dp"
+                app:startIconDrawable="@android:drawable/ic_menu_edit"
+                app:startIconTint="@color/text_hint">
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/tilDeadline"
-            style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="20dp"
-            android:hint="@string/deadline_hint"
-            app:endIconMode="custom"
-            app:endIconDrawable="@android:drawable/ic_menu_my_calendar">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etTaskName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="text" />
+            </com.google.android.material.textfield.TextInputLayout>
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/etDeadline"
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tilDeadline"
+                style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:focusable="false"
-                android:clickable="true"
-                android:inputType="none" />
-        </com.google.android.material.textfield.TextInputLayout>
+                android:layout_marginBottom="16dp"
+                android:hint="@string/deadline_hint"
+                app:boxCornerRadiusBottomEnd="12dp"
+                app:boxCornerRadiusBottomStart="12dp"
+                app:boxCornerRadiusTopEnd="12dp"
+                app:boxCornerRadiusTopStart="12dp"
+                app:endIconMode="custom"
+                app:endIconDrawable="@android:drawable/ic_menu_my_calendar"
+                app:startIconDrawable="@android:drawable/ic_menu_recent_history"
+                app:startIconTint="@color/text_hint">
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/tilNote"
-            style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="32dp"
-            android:hint="@string/note_hint">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etDeadline"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:focusable="false"
+                    android:clickable="true"
+                    android:inputType="none" />
+            </com.google.android.material.textfield.TextInputLayout>
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/etNote"
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tilNote"
+                style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="textMultiLine"
-                android:minLines="3"
-                android:gravity="top" />
-        </com.google.android.material.textfield.TextInputLayout>
+                android:layout_marginBottom="24dp"
+                android:hint="@string/note_hint"
+                app:boxCornerRadiusBottomEnd="12dp"
+                app:boxCornerRadiusBottomStart="12dp"
+                app:boxCornerRadiusTopEnd="12dp"
+                app:boxCornerRadiusTopStart="12dp"
+                app:startIconDrawable="@android:drawable/ic_menu_agenda"
+                app:startIconTint="@color/text_hint">
 
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/btnSave"
-            android:layout_width="match_parent"
-            android:layout_height="56dp"
-            android:text="@string/save_button"
-            android:textSize="16sp" />
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etNote"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textMultiLine"
+                    android:minLines="3"
+                    android:gravity="top" />
+            </com.google.android.material.textfield.TextInputLayout>
 
-    </LinearLayout>
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnSave"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:text="@string/save_button"
+                android:textSize="16sp"
+                android:backgroundTint="@color/primary"
+                app:cornerRadius="14dp"
+                app:icon="@android:drawable/ic_menu_save"
+                app:iconGravity="textStart"
+                app:iconTint="@color/white" />
+
+        </LinearLayout>
+
+    </com.google.android.material.card.MaterialCardView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
