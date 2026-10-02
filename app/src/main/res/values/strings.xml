@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">TH2</string>
+    <string name="login_title">ĐĂNG NHẬP</string>
+    <string name="username_hint">Username</string>
+    <string name="password_hint">Password</string>
+    <string name="login_button">ĐĂNG NHẬP</string>
+    <string name="register_prompt">Chưa có tài khoản? Đăng ký ngay</string>
+    <string name="today_tasks">Công việc hôm nay</string>
+    <string name="upcoming_tasks">Công việc sắp tới</string>
+    <string name="add_task_title">Thêm mới</string>
+    <string name="task_name_hint">Tên công việc</string>
+    <string name="deadline_hint">Thời gian hoàn thành</string>
+    <string name="note_hint">Ghi chú</string>
+    <string name="save_button">Lưu</string>
+    <string name="error_empty_username">Vui lòng nhập username</string>
+    <string name="error_empty_password">Vui lòng nhập password</string>
+    <string name="error_empty_task_name">Vui lòng nhập tên công việc</string>
+    <string name="error_empty_deadline">Vui lòng chọn thời gian hoàn thành</string>
+    <string name="no_tasks">Chưa có công việc nào</string>
+</resources>
