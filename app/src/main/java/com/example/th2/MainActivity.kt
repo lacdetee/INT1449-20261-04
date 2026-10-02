@@ -47,9 +47,13 @@ class MainActivity : AppCompatActivity() {
             val password = etPassword.text.toString().trim()
 
             if (validateInput(username, password)) {
-                val intent = Intent(this, TaskListActivity::class.java)
-                intent.putExtra("username", username)
-                startActivity(intent)
+                if (username == "admin" && password == "1234") {
+                    val intent = Intent(this, TaskListActivity::class.java)
+                    intent.putExtra("username", username)
+                    startActivity(intent)
+                } else {
+                    Toast.makeText(this, "Sai tài khoản hoặc mật khẩu", Toast.LENGTH_SHORT).show()
+                }
             }
         }
 
